@@ -3,7 +3,7 @@ import { Drawable, Vector2 } from '../interface/shape.js';
 
 const NumberOfCircles = 100;
 const MinDistRelation = 200;
-export function artsBackground(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
+export function geometricNetwork(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
   let frames_per_second = 60;
   let interval = Math.floor(1000 / frames_per_second);
   let currentTime = 0;

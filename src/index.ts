@@ -1,4 +1,4 @@
-import { artsBackground } from './art/dots.js';
+import { geometricNetwork } from './art/geometric_network.js';
 import { initCanvas } from './canvas.js';
 import { windowErrorHandler } from './error.js';
 
@@ -13,7 +13,7 @@ function main() {
   if (!ctx) {
     throw new Error('Can not get 2d canvas context');
   }
-  artsBackground(canvas, ctx);
+  geometricNetwork(canvas, ctx);
 }
 
 main();
