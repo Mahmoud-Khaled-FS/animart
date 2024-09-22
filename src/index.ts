@@ -1,3 +1,4 @@
+import { symmetryGrid } from './art/symmetry_grid.js';
 import { geometricNetwork } from './art/geometric_network.js';
 import { initCanvas } from './canvas.js';
 import { windowErrorHandler } from './error.js';
@@ -13,7 +14,18 @@ function main() {
   if (!ctx) {
     throw new Error('Can not get 2d canvas context');
   }
-  geometricNetwork(canvas, ctx);
+  const urlParams = new URLSearchParams(window.location.search);
+  switch (urlParams.get('art')) {
+    case 'symmetry-grid':
+      symmetryGrid(canvas, ctx);
+      break;
+    case 'geometric-network':
+      geometricNetwork(canvas, ctx);
+      break;
+    default:
+      geometricNetwork(canvas, ctx);
+  }
+  // geometricNetwork(canvas, ctx);
 }
 
 main();

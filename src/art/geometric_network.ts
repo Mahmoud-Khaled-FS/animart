@@ -74,7 +74,7 @@ class Line implements Drawable {
 class Circle implements Drawable {
   public color: string = '#FFFFFF';
   public radius: number = 3;
-  public originRadius: number = 3;
+  public originRadius: number = this.radius;
   public paddingY = 50;
   public paddingX = 50;
   public transparent = randomNumber(0, 0xff);
@@ -84,9 +84,6 @@ class Circle implements Drawable {
   draw(_canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D): void {
     ctx.beginPath();
     ctx.fillStyle = this.color + this.transparent.toString(16).padStart(2, '0');
-    if ((this.color + this.transparent.toString(16).padStart(2, '0')).length === 10) {
-      // console.log(this.color + this.transparent.toString(16).padStart(2, '0'));
-    }
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     ctx.fill();
   }
