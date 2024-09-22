@@ -38,8 +38,8 @@ export function symmetryGrid(canvas: HTMLCanvasElement, ctx: CanvasRenderingCont
 }
 
 class Circle implements Drawable {
-  public color: string = '#FFFFFF';
-  public radius: number = 5;
+  public color: string = '#FFBF00';
+  public radius: number = 3;
   public originRadius: number = this.radius;
   public paddingY = 50;
   public paddingX = 50;
@@ -77,7 +77,7 @@ class Circle implements Drawable {
 
   update(canvas: HTMLCanvasElement): void {
     if (this.isInsideMouseCircle()) {
-      const newRadius = 30;
+      const newRadius = 20;
       this.radius = newRadius - (this.mouseDist() / this.mouseCircle!.radius) * newRadius;
       this.x = this.originX;
       this.y = this.originY;
@@ -86,8 +86,8 @@ class Circle implements Drawable {
       const mPos = this.getMouseDirection();
       const cellWidth = canvas.width / GRID_COLUMN;
       const cellHeight = canvas.height / GRID_ROW;
-      this.x = this.originX - ((mPos.x / canvas.width) * cellWidth) / 2;
-      this.y = this.originY - ((mPos.y / canvas.height) * cellHeight) / 2;
+      this.x = this.originX - ((mPos.x / canvas.width) * cellWidth) / 3;
+      this.y = this.originY - ((mPos.y / canvas.height) * cellHeight) / 3;
     }
   }
 }
@@ -97,13 +97,7 @@ class MouseCircle implements Drawable {
   public y: number = 0;
   public radius: number = 300;
   private isEventAdded = false;
-  draw(_: HTMLCanvasElement, ctx: CanvasRenderingContext2D): void {
-    // ctx.beginPath();
-    // ctx.lineWidth = 4;
-    // ctx.strokeStyle = '#8B8000';
-    // ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    // ctx.stroke();
-  }
+  draw(_: HTMLCanvasElement, __: CanvasRenderingContext2D): void {}
 
   update(): void {
     if (!this.isEventAdded) {
