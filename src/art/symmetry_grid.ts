@@ -38,7 +38,7 @@ export function symmetryGrid(canvas: HTMLCanvasElement, ctx: CanvasRenderingCont
 }
 
 class Circle implements Drawable {
-  public color: string = '#FFBF00';
+  public color: string = '#FFFFFF';
   public radius: number = 3;
   public originRadius: number = this.radius;
   public paddingY = 50;

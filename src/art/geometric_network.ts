@@ -1,7 +1,7 @@
 import { randomElement, randomNumber } from '../utils/random.js';
 import { Drawable, Vector2 } from '../interface/shape.js';
 
-const NumberOfCircles = 100;
+const NumberOfCircles = 120;
 const MinDistRelation = 200;
 export function geometricNetwork(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
   let frames_per_second = 60;
